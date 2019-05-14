@@ -21,7 +21,7 @@ namespace cclib {
     namespace common {
         namespace util {
             template<typename Comparable>
-            inline string printVectorValue(vector<Comparable> value) {
+            inline void printVectorValue(vector<Comparable> value) {
                 string retString = "vector:";
                 for(int i = 0; i < value.size(); i++) {
                     retString += " value[" + to_string(i) + "]: " + to_string(value[i]);
