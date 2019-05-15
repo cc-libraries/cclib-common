@@ -26,9 +26,19 @@ namespace cclib {
                 for(int i = 0; i < value.size(); i++) {
                     retString += " value[" + to_string(i) + "]: " + to_string(value[i]);
                 }
-
                 cout << retString << endl;
             };
+
+            template<typename Comparable>
+            Comparable getMiddleValue(Comparable& first, Comparable& second, Comparable& third) {
+                Comparable biggerValue = first > second ? first : second;
+                Comparable maxValue = biggerValue > third ? biggerValue : second;
+
+                Comparable smallerValue = first < second ? first : second;
+                Comparable minValue = smallerValue < third ? smallerValue : second;
+
+                return first + second + third - maxValue - minValue;
+            }
         }
     }
 }
