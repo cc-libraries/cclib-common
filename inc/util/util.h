@@ -11,11 +11,8 @@
  **********************************************************************************/
 #ifndef CCLIB_COMMON_UTIL_H
 #define CCLIB_COMMON_UTIL_H
-#include <vector>
-#include <string>
-#include <iostream>
 
-using namespace std;
+#include "./../base/common_include.h"
 
 namespace cclib {
     namespace common {
