@@ -12,6 +12,6 @@
 #ifndef CCLIB_COMMON_INCLUDE_H
 #define CCLIB_COMMON_INCLUDE_H
 
-using namespace std;
+// using namespace std;
 
 #endif  //CCLIB_COMMON_INCLUDE_H

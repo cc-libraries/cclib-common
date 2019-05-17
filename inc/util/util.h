@@ -12,18 +12,27 @@
 #ifndef CCLIB_COMMON_UTIL_H
 #define CCLIB_COMMON_UTIL_H
 
-#include "./../base/common_include.h"
+#include "./../../../inc/adt/vector.h"
 
 namespace cclib {
     namespace common {
         namespace util {
             template<typename Comparable>
-            inline void printVectorValue(vector<Comparable> value) {
-                string retString = "vector:";
+            inline void printVectorValue(std::vector<Comparable>& value) {
+                std::string retString = "vector:";
                 for(int i = 0; i < value.size(); i++) {
-                    retString += " value[" + to_string(i) + "]: " + to_string(value[i]);
+                    retString += " value[" + std::to_string(i) + "]: " + std::to_string(value[i]);
                 }
-                cout << retString << endl;
+                std::cout << retString << std::endl;
+            };
+
+            template<typename Comparable>
+            inline void printVectorValue(cclib::adt::vector<Comparable> value) {
+                std::string retString = "vector:";
+                for(int i = 0; i < value.size(); i++) {
+                    retString += " value[" + std::to_string(i) + "]: " + std::to_string(value[i]);
+                }
+                std::cout << retString << std::endl;
             };
 
             template<typename Comparable>
