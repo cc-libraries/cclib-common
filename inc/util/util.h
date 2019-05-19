@@ -27,7 +27,7 @@ namespace cclib {
             };
 
             template<typename Comparable>
-            inline void printVectorValue(cclib::adt::Vector<Comparable> value) {
+            inline void printVectorValue(cclib::adt::Vector<Comparable>& value) {
                 std::string retString = "vector:";
                 for(int i = 0; i < value.size(); i++) {
                     retString += " value[" + std::to_string(i) + "]: " + std::to_string(value[i]);
