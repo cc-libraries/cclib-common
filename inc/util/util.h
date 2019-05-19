@@ -12,6 +12,7 @@
 #ifndef CCLIB_COMMON_UTIL_H
 #define CCLIB_COMMON_UTIL_H
 
+#include <vector>
 #include "./../../../inc/adt/vector.h"
 
 namespace cclib {
