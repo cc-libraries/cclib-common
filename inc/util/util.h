@@ -13,7 +13,9 @@
 #define CCLIB_COMMON_UTIL_H
 
 #include <vector>
+#include <string>
 #include "./../../../inc/adt/vector.h"
+#include "./../../../inc/adt/list.h"
 
 namespace cclib {
     namespace common {
@@ -29,12 +31,22 @@ namespace cclib {
 
             template<typename Comparable>
             inline void printVectorValue(cclib::adt::Vector<Comparable>& value) {
-                std::string retString = "vector:";
+                std::string retString = "Vector:";
                 for(int i = 0; i < value.size(); i++) {
                     retString += " value[" + std::to_string(i) + "]: " + std::to_string(value[i]);
                 }
                 std::cout << retString << std::endl;
             };
+
+            template<typename Comparable>
+            inline void printListValue(cclib::adt::List<Comparable>& value) {
+                cclib::adt::List<Comparable>::iterator itr = value.begin();
+                std::string retString = "List:";
+                for(int i = 0; i < value.size(); i++) {
+                    retString += " value[" + std::to_string(i) + "]: " + std::to_string(*itr);
+                }
+                std::cout << retString << std::endl;
+            }
 
             template<typename Comparable>
             Comparable getMiddleValue(Comparable& first, Comparable& second, Comparable& third) {
