@@ -40,10 +40,11 @@ namespace cclib {
 
             template<typename Comparable>
             inline void printListValue(cclib::adt::List<Comparable>& value) {
-                cclib::adt::List<Comparable>::iterator itr = value.begin();
+                typename cclib::adt::List<Comparable>::iterator itr = value.begin();
                 std::string retString = "List:";
                 for(int i = 0; i < value.size(); i++) {
                     retString += " value[" + std::to_string(i) + "]: " + std::to_string(*itr);
+                    itr++;
                 }
                 std::cout << retString << std::endl;
             }
