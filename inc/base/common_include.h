@@ -1,7 +1,7 @@
 /*********************************************************************
  * cclib-common
  *
- * Copyright (c) 2019 cc-algorithm contributors:
+ * Copyright (c) 2019 cclib-common contributors:
  *   - hello_chenchen <https://github.com/hello-chenchen>
  *
  * MIT License <https://github.com/cc-libraries/cclib-common/blob/master/LICENSE>
