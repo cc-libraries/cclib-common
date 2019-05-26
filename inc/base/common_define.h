@@ -12,23 +12,30 @@
 #ifndef CCLIB_COMMON_DEFINE_H
 #define CCLIB_COMMON_DEFINE_H
 
-#define CC_NULL NULL
+#define CC_NULL 0
 #define CC_SUCCESS 1
 #define CC_FAILED 0
 #define CC_INVALID -1
 
+// Definitions of common types
+#ifdef _CC_DEF_64
+    typedef unsigned __int64 cc_size_t;
+#else
+    typedef unsigned int     cc_size_t;
+#endif
+
 #define IS_POINT_NULL_POINT(point) \
-if(NULL == point) {\
+if(CC_NULL == point) {\
     return CC_NULL;\
 }\
 
 #define IS_POINT_NULL_INT(point) \
-if(NULL == point) {\
+if(CC_NULL == point) {\
     return CC_FAILED;\
 }\
 
 #define IS_POINT_NULL_UINT(point) \
-if(NULL == point) {\
+if(CC_NULL == point) {\
     return CC_FAILED;\
 }\
 
