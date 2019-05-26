@@ -52,31 +52,27 @@ namespace cclib {
 
             template<typename Comparable>
             inline std::string preOrderTraversal(cclib::adt::BinaryNode<Comparable>*& root, std::string result) {
-                std::cout << "root: " << root << std::endl;
                 if(CC_NULL == root) {
                     return result;
                 }
 
                 result += " value: " + std::to_string(root->_data);
-                std::cout << "result: " << result << std::endl;
 
-                std::cout << "hello " << std::endl;
                 if(CC_NULL != root->_leftChild) {
                     return result += preOrderTraversal(root->_leftChild, result);
                 }
-                std::cout << "hello1 " << std::endl;
                 if(CC_NULL != root->_rightChild) {
                     return result += preOrderTraversal(root->_rightChild, result);
                 }
+
+                std::cout << "result: " << result << std::endl;
             }
 
             template<typename Comparable>
             inline void printTreeValue(cclib::adt::BinarySearchTree<Comparable>& value) {
                 cclib::adt::BinaryNode<Comparable>* itr = value.begin();
                 std::string result = "BinarySearchTree: ";
-                result = preOrderTraversal(itr, result);
-
-                std::cout << "BinarySearchTree: " << result << std::endl;
+                preOrderTraversal(itr, result);
             }
 
             template<typename Comparable>
