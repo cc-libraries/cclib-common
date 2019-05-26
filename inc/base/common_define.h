@@ -16,13 +16,14 @@
 #define CC_SUCCESS 1
 #define CC_FAILED 0
 #define CC_INVALID -1
+#define CC_INIT 0
 
 // Definitions of common types
 #ifdef _CC_DEF_64
-    typedef unsigned __int64 cc_size_t;
+    typedef unsigned long long int cc_size_t;
 #else
     typedef unsigned int     cc_size_t;
-#endif
+#endif //_CC_DEF_64
 
 #define IS_POINT_NULL_POINT(point) \
 if(CC_NULL == point) {\
