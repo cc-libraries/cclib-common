@@ -14,9 +14,11 @@
 
 #include <vector>
 #include <string>
+#include <iostream>
 #include "./../../../inc/adt/vector.h"
 #include "./../../../inc/adt/list.h"
 #include "./../../../inc/adt/tree.h"
+#include "./../../../inc/adt/pair.h"
 
 namespace cclib {
     namespace common {
@@ -72,7 +74,7 @@ namespace cclib {
             template<typename Comparable>
             inline void printTreeValue(cclib::adt::BinarySearchTree<Comparable>& value) {
                 cclib::adt::BinaryNode<Comparable>* itr = value.begin();
-                std::cout << "BinarySearchTree: ";
+                std::cout << "BinarySearchTree:";
                 std::string result = "";
                 preOrderTraversal(itr, result);
             }
@@ -83,7 +85,7 @@ namespace cclib {
                     return result;
                 }
 
-                result += " value: " + cclib::adt::Pair<_K, _V>::to_string(root->_data);
+                result += " Pair:" + cclib::adt::Pair<_K, _V>::to_string(root->_data);
 
                 if(CC_NULL != root->_leftChild) {
                     return result += preOrderTraversal(root->_leftChild, result);
@@ -99,7 +101,7 @@ namespace cclib {
             template<typename _K, typename _V, typename Comparable = cclib::adt::Pair<_K, _V>>
             inline void printTreeValue(cclib::adt::BinarySearchTree<cclib::adt::Pair<_K, _V>>& value) {
                 cclib::adt::BinaryNode<Comparable>* itr = value.begin();
-                std::cout << "BinarySearchTree: ";
+                std::cout << "BinarySearchTree:";
                 std::string result = "";
                 preOrderTraversal(itr, result);
             }
