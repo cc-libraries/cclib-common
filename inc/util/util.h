@@ -72,7 +72,8 @@ namespace cclib {
             template<typename Comparable>
             inline void printTreeValue(cclib::adt::BinarySearchTree<Comparable>& value) {
                 cclib::adt::BinaryNode<Comparable>* itr = value.begin();
-                std::string result = "BinarySearchTree: ";
+                std::cout << "BinarySearchTree: ";
+                std::string result = "";
                 preOrderTraversal(itr, result);
             }
 
