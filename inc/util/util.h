@@ -65,7 +65,8 @@ namespace cclib {
                     return result += preOrderTraversal(root->_rightChild, result);
                 }
 
-                std::cout << "result: " << result << std::endl;
+                std::cout << result << std::endl;
+                return result;
             }
 
             template<typename Comparable>
