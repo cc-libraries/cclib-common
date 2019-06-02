@@ -52,59 +52,59 @@ namespace cclib {
                 std::cout << retString << std::endl;
             }
 
-            template<typename Comparable>
-            inline std::string preOrderTraversal(cclib::adt::BinaryNode<Comparable>*& root, std::string result) {
-                if(CC_NULL == root) {
-                    return result;
-                }
+            // template<typename Comparable>
+            // inline std::string preOrderTraversal(cclib::adt::BinaryNode<Comparable>*& root, std::string result) {
+            //     if(CC_NULL == root) {
+            //         return result;
+            //     }
 
-                result += " value: " + std::to_string(root->_data);
+            //     result += " value: " + std::to_string(root->_data);
 
-                if(CC_NULL != root->_leftChild) {
-                    return result += preOrderTraversal(root->_leftChild, result);
-                }
-                if(CC_NULL != root->_rightChild) {
-                    return result += preOrderTraversal(root->_rightChild, result);
-                }
+            //     if(CC_NULL != root->_leftChild) {
+            //         return result += preOrderTraversal(root->_leftChild, result);
+            //     }
+            //     if(CC_NULL != root->_rightChild) {
+            //         return result += preOrderTraversal(root->_rightChild, result);
+            //     }
 
-                std::cout << result << std::endl;
-                return result;
-            }
+            //     std::cout << result << std::endl;
+            //     return result;
+            // }
 
-            template<typename Comparable>
-            inline void printTreeValue(cclib::adt::BinarySearchTree<Comparable>& value) {
-                cclib::adt::BinaryNode<Comparable>* itr = value.begin();
-                std::cout << "BinarySearchTree:";
-                std::string result = "";
-                preOrderTraversal(itr, result);
-            }
+            // template<typename Comparable>
+            // inline void printTreeValue(cclib::adt::BinarySearchTree<Comparable>& value) {
+            //     cclib::adt::BinaryNode<Comparable>* itr = value.begin();
+            //     std::cout << "BinarySearchTree:";
+            //     std::string result = "";
+            //     preOrderTraversal(itr, result);
+            // }
 
-            template<typename _K, typename _V, typename Comparable = cclib::adt::Pair<_K, _V>>
-            inline std::string preOrderTraversal(cclib::adt::BinaryNode<cclib::adt::Pair<_K, _V>>*& root, std::string result) {
-                if(CC_NULL == root) {
-                    return result;
-                }
+            // template<typename _K, typename _V, typename Comparable = cclib::adt::Pair<_K, _V>>
+            // inline std::string preOrderTraversal(cclib::adt::BinaryNode<cclib::adt::Pair<_K, _V>>*& root, std::string result) {
+            //     if(CC_NULL == root) {
+            //         return result;
+            //     }
 
-                result += " Pair:" + cclib::adt::Pair<_K, _V>::to_string(root->_data);
+            //     result += " Pair:" + cclib::adt::Pair<_K, _V>::to_string(root->_data);
 
-                if(CC_NULL != root->_leftChild) {
-                    return result += preOrderTraversal(root->_leftChild, result);
-                }
-                if(CC_NULL != root->_rightChild) {
-                    return result += preOrderTraversal(root->_rightChild, result);
-                }
+            //     if(CC_NULL != root->_leftChild) {
+            //         return result += preOrderTraversal(root->_leftChild, result);
+            //     }
+            //     if(CC_NULL != root->_rightChild) {
+            //         return result += preOrderTraversal(root->_rightChild, result);
+            //     }
 
-                std::cout << result << std::endl;
-                return result;
-            }
+            //     std::cout << result << std::endl;
+            //     return result;
+            // }
 
-            template<typename _K, typename _V, typename Comparable = cclib::adt::Pair<_K, _V>>
-            inline void printTreeValue(cclib::adt::BinarySearchTree<cclib::adt::Pair<_K, _V>>& value) {
-                cclib::adt::BinaryNode<Comparable>* itr = value.begin();
-                std::cout << "BinarySearchTree:";
-                std::string result = "";
-                preOrderTraversal(itr, result);
-            }
+            // template<typename _K, typename _V, typename Comparable = cclib::adt::Pair<_K, _V>>
+            // inline void printTreeValue(cclib::adt::BinarySearchTree<cclib::adt::Pair<_K, _V>>& value) {
+            //     cclib::adt::BinaryNode<Comparable>* itr = value.begin();
+            //     std::cout << "BinarySearchTree:";
+            //     std::string result = "";
+            //     preOrderTraversal(itr, result);
+            // }
 
             template<typename Comparable>
             Comparable getMiddleValue(Comparable& first, Comparable& second, Comparable& third) {
