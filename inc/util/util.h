@@ -72,11 +72,24 @@ namespace cclib {
             }
 
             template<typename Comparable>
-            inline void printTreeValue(cclib::adt::BinarySearchTree<Comparable>& value) {
+            inline void printBinarySearchTreeValue(cclib::adt::BinarySearchTree<Comparable>& value) {
                 cclib::adt::BinaryNode<Comparable>* itr = value.begin();
                 std::cout << "BinarySearchTree:";
                 std::string result = "";
                 preOrderTraversal(itr, result);
+            }
+
+            template<typename Comparable>
+            inline void printTreeValue(cclib::adt::RedBlackTree<Comparable> value) {
+                typename cclib::adt::RedBlackTree<Comparable>::iterator itr = value.begin();
+                std::string retString = "Tree:";
+                for(int i = 0; i < value.size(); i++) {
+                    retString += " value[" + std::to_string(i) + "]: " + std::to_string(*itr);
+                    // if(i < value.size()-1) {
+                        itr++;
+                    // }
+                }
+                std::cout << retString << std::endl;
             }
 
             template<typename _K, typename _V, typename Comparable = cclib::adt::Pair<_K, _V>>
@@ -99,11 +112,22 @@ namespace cclib {
             }
 
             template<typename _K, typename _V, typename Comparable = cclib::adt::Pair<_K, _V>>
-            inline void printTreeValue(cclib::adt::BinarySearchTree<cclib::adt::Pair<_K, _V>>& value) {
+            inline void printBinarySearchTreeValue(cclib::adt::BinarySearchTree<cclib::adt::Pair<_K, _V>>& value) {
                 cclib::adt::BinaryNode<Comparable>* itr = value.begin();
                 std::cout << "BinarySearchTree:";
                 std::string result = "";
                 preOrderTraversal(itr, result);
+            }
+
+            template<typename _K, typename _V, typename Comparable = cclib::adt::Pair<_K, _V>>
+            inline void printTreeValue(cclib::adt::RedBlackTree<cclib::adt::Pair<_K, _V>>& value) {
+                typename cclib::adt::RedBlackTree<Comparable>::iterator itr = value.begin();
+                std::string retString = "Tree:";
+                for(int i = 0; i < value.size(); i++) {
+                    retString += " value[" + std::to_string(i) + "]: " + cclib::adt::Pair<_K, _V>::to_string(*itr);
+                    ++itr;
+                }
+                std::cout << retString << std::endl;
             }
 
             template<typename Comparable>
