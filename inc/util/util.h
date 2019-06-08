@@ -80,14 +80,13 @@ namespace cclib {
             }
 
             template<typename Comparable>
-            inline void printTreeValue(cclib::adt::RedBlackTree<Comparable> value) {
+            inline void printTreeValue(cclib::adt::RedBlackTree<Comparable>& value) {
                 typename cclib::adt::RedBlackTree<Comparable>::iterator itr = value.begin();
+
                 std::string retString = "Tree:";
                 for(int i = 0; i < value.size(); i++) {
                     retString += " value[" + std::to_string(i) + "]: " + std::to_string(*itr);
-                    // if(i < value.size()-1) {
-                        itr++;
-                    // }
+                    itr++;
                 }
                 std::cout << retString << std::endl;
             }
@@ -124,7 +123,9 @@ namespace cclib {
                 typename cclib::adt::RedBlackTree<Comparable>::iterator itr = value.begin();
                 std::string retString = "Tree:";
                 for(int i = 0; i < value.size(); i++) {
-                    retString += " value[" + std::to_string(i) + "]: " + cclib::adt::Pair<_K, _V>::to_string(*itr);
+                    // cclib::adt::RedBlackNode<Comparable> aa = *itr;
+                    Comparable data = ((cclib::adt::RedBlackNode<Comparable>)*itr)._data;
+                    retString += " value[" + std::to_string(i) + "]: " + cclib::adt::Pair<_K, _V>::to_string(data);
                     ++itr;
                 }
                 std::cout << retString << std::endl;
