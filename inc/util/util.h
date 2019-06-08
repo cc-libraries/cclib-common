@@ -123,9 +123,7 @@ namespace cclib {
                 typename cclib::adt::RedBlackTree<Comparable>::iterator itr = value.begin();
                 std::string retString = "Tree:";
                 for(int i = 0; i < value.size(); i++) {
-                    // cclib::adt::RedBlackNode<Comparable> aa = *itr;
-                    Comparable data = ((cclib::adt::RedBlackNode<Comparable>)*itr)._data;
-                    retString += " value[" + std::to_string(i) + "]: " + cclib::adt::Pair<_K, _V>::to_string(data);
+                    retString += " value[" + std::to_string(i) + "]: " + cclib::adt::Pair<_K, _V>::to_string(*itr);
                     ++itr;
                 }
                 std::cout << retString << std::endl;
