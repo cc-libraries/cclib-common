@@ -40,4 +40,8 @@ if(CC_NULL == point) {\
     return CC_FAILED;\
 }\
 
+#define MAX_VALUE(a, b) a > b ? a : b;
+
+#define MIN_VALUE(a, b) a < b ? a : b;
+
 #endif //CCLIB_COMMON_DEFINE_H
