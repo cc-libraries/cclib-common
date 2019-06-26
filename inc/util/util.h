@@ -139,6 +139,20 @@ namespace cclib {
 
                 return first + second + third - maxValue - minValue;
             }
+
+            template<typename Comparable>
+            void swap(Comparable& value1, Comparable& value2) {
+                Comparable temp = value1;
+                value1 = value2;
+                value2 = temp;
+            }
+
+            template<typename Comparable>
+            void swap(Comparable* value1, Comparable* value2) {
+                Comparable temp = *value1;
+                *value1 = *value2;
+                *value2 = temp;
+            }
         }
     }
 }
