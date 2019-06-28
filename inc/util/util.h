@@ -153,6 +153,33 @@ namespace cclib {
                 *value1 = *value2;
                 *value2 = temp;
             }
+
+            template<typename T>
+            int pow(T x, unsigned int n) {
+                if(0 == n) {
+                    if(T() == x) {
+                        return -1;
+                    }
+
+                    return 1;
+                }
+
+                for(int i = 1; i < n; i++) {
+                    x *= x;
+                }
+
+                return x;
+            }
+
+            int spliteIntDigit(int value, int index) {
+                int divValue = value / pow(10, index-1);
+                return divValue % 10;
+            }
+
+            int spliteIntDigitNA(int value, int index) {
+                int divValue = value / pow(10, index-1);
+                return 0 == divValue ? -1 : divValue % 10;
+            }
         }
     }
 }
