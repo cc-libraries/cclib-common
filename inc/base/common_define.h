@@ -26,22 +26,22 @@
 #endif //_CC_DEF_64
 
 #define IS_POINT_NULL_POINT(point) \
-if(CC_NULL == point) {\
+if(CC_NULL == (point)) {\
     return CC_NULL;\
 }\
 
 #define IS_POINT_NULL_INT(point) \
-if(CC_NULL == point) {\
+if(CC_NULL == (point)) {\
     return CC_FAILED;\
 }\
 
 #define IS_POINT_NULL_UINT(point) \
-if(CC_NULL == point) {\
+if(CC_NULL == (point)) {\
     return CC_FAILED;\
 }\
 
-#define MAX_VALUE(a, b) a > b ? a : b;
+#define MAX_VALUE(a, b) ((a) > (b) ? (a) : (b))
 
-#define MIN_VALUE(a, b) a < b ? a : b;
+#define MIN_VALUE(a, b) ((a) < (b) ? (a) : (b))
 
 #endif //CCLIB_COMMON_DEFINE_H
