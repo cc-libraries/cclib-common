@@ -24,6 +24,16 @@ namespace cclib {
     namespace common {
         namespace util {
             template<typename Comparable>
+            inline void printArrayValue(Comparable* value, size_t size) {
+                std::string retString = "array:";
+                for(int i = 0; i < size; i++) {
+                    retString = " value[" + std::to_string(i) + "]: " + std::to_string(*(value + i));
+                }
+
+                std::cout << retString << std::endl;
+            }
+
+            template<typename Comparable>
             inline void printVectorValue(std::vector<Comparable>& value) {
                 std::string retString = "vector:";
                 for(int i = 0; i < value.size(); i++) {
